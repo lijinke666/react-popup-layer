@@ -1,7 +1,7 @@
 {
   "name": "react-popup-layer",
   "version": "0.0.1",
-  "main":"src/Modal",
+  "main":"src/Modal/index.js",
   "description": "React popup layer component",
   "scripts": {
     "build": "webpack --progress --config ./example/webpack.config.js ",

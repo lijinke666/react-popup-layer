@@ -5,9 +5,10 @@ react popup ui component
 #### if you want run example
  - `yarn` & `yarn add http-server -g`
  - `npm run example`   run example
+##### Then open `ocalhost:8080/example/build` in a browser .
  
 ####  use
-`npm install react-popup-layer`
+`npm install react-popup-layer` or `yarn add react-popup-layer`
 
 #### Example
 
