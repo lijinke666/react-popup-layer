@@ -1,5 +1,6 @@
 /node_modules/
 .npmignore
+/example/build/
 npm-debug.log
 .DS_Store
 dist

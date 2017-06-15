@@ -5,7 +5,7 @@ react popup ui component
 #### if you want run example
  - `yarn` & `yarn add http-server -g`
  - `npm run example`   run example
-##### Then open `ocalhost:8080/example/build` in a browser .
+##### Then open `localhost:8080/example/build` in a browser .
  
 ####  use
 `npm install react-popup-layer` or `yarn add react-popup-layer`
@@ -48,22 +48,6 @@ class Demo extends React.PureComponent {
                 </ol>
          
                 <hr />
-                <h4>2.Some buttons are provided by the way,if you want to use</h4>
-                <ol>
-                    <li style={margin}><Button type="success">success</Button></li>
-                    <li style={margin}><Button type="info">info</Button></li>
-                    <li style={margin}><Button type="error">error</Button></li>
-                    <li style={margin}><Button type="warning">warning</Button></li>
-                    <li style={margin}><Button type="primary">primary</Button></li>
-                    <li style={margin}><Button>default</Button></li>
-                    <li style={margin}><Button type="disable">disable</Button></li>
-                    <li style={margin}><Button type="primary block">block</Button></li>
-                </ol>
-
-
-
-
-
                 <Modal
                     title="example title"
                     visible={visible}

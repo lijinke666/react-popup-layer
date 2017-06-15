@@ -1,7 +1,9 @@
 import React from "React"
 import ReactDOM from "react-dom"
-import Modal from "../src/Modal"
-import Button from "../src/Button"
+// import Popup from "../src/Modal"
+// import Button from "../src/Button"
+
+import {Popup,Button} from "react-popup-layer"
 
 const margin = {
     "margin": "10px 0"
@@ -54,7 +56,7 @@ class Demo extends React.PureComponent {
 
 
 
-                <Modal
+                <Popup
                     title="example title"
                     visible={visible}
                     footerTitle={"快快消失"}
@@ -64,8 +66,8 @@ class Demo extends React.PureComponent {
                     <p>
                         <h1>bla bla bla ...</h1>
                     </p>
-                </Modal>
-                <Modal
+                </Popup>
+                <Popup
                     title="wtf!! 我居然没有脚!"
                     visible={visible2}
                     footer={false}
@@ -76,7 +78,7 @@ class Demo extends React.PureComponent {
                         <h1>bla bla bla ...</h1>
                         <Button type="primary block" onClick={this.closeNoFooterModal}>没关系我自己长一个</Button>
                     </p>
-                </Modal>
+                </Popup>
             </div>
         )
     }
