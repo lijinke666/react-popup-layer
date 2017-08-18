@@ -2,6 +2,7 @@ import React, { PropTypes } from "react"
 import ReactDOM from "react-dom"
 import classNames from "classnames"
 import Button from "rc-button"
+import CloseIcon from "react-icons/lib/fa/close"
 import "./styles.less"
 
 export default class Madal extends React.PureComponent {
@@ -18,10 +19,13 @@ export default class Madal extends React.PureComponent {
         title: PropTypes.string,
         okText: PropTypes.string,
         cancelText: PropTypes.string,
-        visible: PropTypes.bool.isRequired,
-        footer: PropTypes.bool.isRequired,
-        onCancel: PropTypes.func.isRequired,
-        onOk: PropTypes.func.isRequired,
+        visible: PropTypes.bool,
+        footer: PropTypes.oneOfType([
+            PropTypes.array,
+            PropTypes.bool
+        ]),
+        onCancel: PropTypes.func,
+        onOk: PropTypes.func,
     }
     render() {
         const {
@@ -37,30 +41,41 @@ export default class Madal extends React.PureComponent {
             ...attr
         } = this.props
         return (
-            <div key="jinke-modal-mask" className={classNames("jinke-modal-mask", className, { "modal-animate": visible })} {...attr}>
+            <div 
+                key="jinke-modal-mask" 
+                className={
+                    classNames(
+                        "jinke-modal-mask", 
+                        className, 
+                        { "modal-animate": visible }
+                    )
+                } 
+                {...attr}
+            >
                 <div key="modal" className="jinke-modal">
-                    <section key="modal-header" className="modal-header">
+                    <div key="modal-header" className="modal-header">
                         <h2 className="title">{title}</h2>
                         <span className="modal-close-btn" onClick={() => onCancel()}>
-                            <i className="icon icon-guanbi1"></i>
+                            <CloseIcon/>
                         </span>
-                    </section>
-                    <section key="modal-content" className="modal-content">
+                        
+                    </div>
+                    <div key="modal-content" className="modal-content">
                         {children}
-                    </section>
+                    </div>
                     {
                         footer && footer.length >= 1
-                            ? <section key="modal-footer" className="modal-footer">
+                            ? <div key="modal-footer" className="modal-footer">
                                 {
                                     footer.map((btns) => btns)
                                 }
-                            </section>
+                            </div>
 
                             : footer instanceof Array
-                                ? <section key="modal-footer" className="modal-footer">
-                                    <Button onClick={() => onCancel()}>{cancelText}</Button>,
+                                ? <div key="modal-footer" className="modal-footer">
+                                    <Button onClick={() => onCancel()}>{cancelText}</Button>
                                     <Button type="primary" onClick={() => onOk()}>{okText}</Button>
-                                </section>
+                                </div>
                                 : undefined
                     }
                 </div>

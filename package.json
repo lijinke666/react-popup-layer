@@ -1,6 +1,6 @@
 {
   "name": "react-popup-layer",
-  "version": "0.0.8",
+  "version": "0.2.1",
   "main": "src/index.js",
   "description": "React popup layer component",
   "scripts": {
@@ -43,6 +43,7 @@
     "less-loader": "^2.2.3",
     "open-browser-webpack-plugin": "0.0.2",
     "rc-button": "^0.1.4",
+    "rc-message": "^1.2.1",
     "react-component-example": "^0.0.0",
     "react-loader": "^2.4.0",
     "react-music-player": "^1.0.3",
@@ -54,7 +55,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "rc-button": "^0.1.4",
     "react": "^15.6.0",
-    "react-dom": "^15.6.0"
+    "react-dom": "^15.6.0",
+    "react-icons": "^2.2.5"
   }
 }

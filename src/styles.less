@@ -43,9 +43,12 @@
             }
             .modal-close-btn{
                 position: absolute;
-                right:20px;
-                top:0;
+                right:15px;
+                top:-2px;
                 cursor: pointer;
+                font-size: 18px;
+                font-weight: 100;
+                color: #b1a4a4;
                 i{
                     color:#333333;
                 }
@@ -59,7 +62,14 @@
             max-height: 90%;
         }
         .modal-footer{
-            padding: 10px
+            padding: 10px;
+            justify-content: space-around;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            button{
+                flex-basis: 45%;
+            }
         }
     }
 }
