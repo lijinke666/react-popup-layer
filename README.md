@@ -1,21 +1,28 @@
 # react-popup-layer
 react popup ui component 
 
-
-#### if you want run example
- - `yarn` & `yarn add http-server -g`
- - `npm run example`   run example
-##### Then open `localhost:8080/example/build` in a browser .
+## Example
+### [Live Demo](https://lijinke666.github.io/react-popup-layer/)
+ - `yarn` or `npm install`
+ - `npm run demo` or `npm start`  run example
  
-####  use
-`npm install react-popup-layer` or `yarn add react-popup-layer`
+## Install
+```
+npm install react-popup-layer
+```
 
-#### Example
+or
 
 ```
+yarn add react-popup-layer
+```
+
+## Usage
+
+```js
 import React from "react"
 import ReactDOM from "react-dom"
-import Modal from "react-popup-layer"
+import Modal,{Button} from "react-popup-layer"
 
 class Demo extends React.PureComponent {
     state = {

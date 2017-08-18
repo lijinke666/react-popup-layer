@@ -1,13 +1,13 @@
 {
   "name": "react-popup-layer",
-  "version": "0.0.4",
-  "main": "index.js",
+  "version": "0.0.8",
+  "main": "src/index.js",
   "description": "React popup layer component",
   "scripts": {
-    "lib": " babel src --out-dir lib",
-    "build": "./node_modules/.bin/babel src --out-dir lib",
-    "prepublish": "npm run build",
-    "example": "webpack --progress --config ./example/webpack.config.js && http-server"
+    "start": "npm run demo",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --config ./example/webpack.config.js",
+    "demo": "webpack-dev-server --progress --config ./example/webpack.config.js"
   },
   "author": "jinke.li",
   "repository": {
@@ -42,9 +42,11 @@
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "open-browser-webpack-plugin": "0.0.2",
+    "rc-button": "^0.1.4",
+    "react-component-example": "^0.0.0",
     "react-loader": "^2.4.0",
     "react-music-player": "^1.0.3",
-    "react-popup-layer": "^0.0.2",
+    "react-popup-layer": "^0.0.7",
     "style-loader": "~0.13.0",
     "url-loader": "^0.5.8",
     "webpack": "2.2.1",

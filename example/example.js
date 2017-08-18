@@ -1,13 +1,10 @@
-import React from "React"
+import React from "react"
 import ReactDOM from "react-dom"
-// import Popup from "../src/Modal"
-// import Button from "../src/Button"
+import ReactPopupLayer from "../src/index"
+import Button from "rc-button"
 
-import {Popup,Button} from "react-popup-layer"
+const margin = {margin:"10px 0"}
 
-const margin = {
-    "margin": "10px 0"
-}
 
 class Demo extends React.PureComponent {
     state = {
@@ -33,31 +30,17 @@ class Demo extends React.PureComponent {
                 <h2>Example</h2>
                 <hr/>
 
-                <h4>1.Modal</h4>
                 <ol>
                     <li style={margin}><Button type="primary" onClick={this.openModal}>open Modal</Button></li>
-                    <li style={margin}><Button type="primary" onClick={this.openNoFooterModal}>open no footer Modal</Button></li>
+                    <li style={margin}><Button type="success" onClick={this.openNoFooterModal}>open no footer Modal</Button></li>
+                    <li style={margin}><Button type="orange" onClick={this.openNoFooterModal}>open custom footer Modal</Button></li>
                 </ol>
          
                 <hr />
-                <h4>2.Some buttons are provided by the way,if you want to use</h4>
-                <ol>
-                    <li style={margin}><Button type="success">success</Button></li>
-                    <li style={margin}><Button type="info">info</Button></li>
-                    <li style={margin}><Button type="error">error</Button></li>
-                    <li style={margin}><Button type="warning">warning</Button></li>
-                    <li style={margin}><Button type="primary">primary</Button></li>
-                    <li style={margin}><Button>default</Button></li>
-                    <li style={margin}><Button type="disable">disable</Button></li>
-                    <li style={margin}><Button type="primary block">block</Button></li>
-                </ol>
-
-
-
-
-
-                <Popup
+                <ReactPopupLayer
                     title="example title"
+                    okText="确定"
+                    cancelText="取消"
                     visible={visible}
                     footerTitle={"快快消失"}
                     onCancel={this.closeModal}
@@ -66,8 +49,8 @@ class Demo extends React.PureComponent {
                     <p>
                         <h1>bla bla bla ...</h1>
                     </p>
-                </Popup>
-                <Popup
+                </ReactPopupLayer>
+                <ReactPopupLayer
                     title="wtf!! 我居然没有脚!"
                     visible={visible2}
                     footer={false}
@@ -78,7 +61,7 @@ class Demo extends React.PureComponent {
                         <h1>bla bla bla ...</h1>
                         <Button type="primary block" onClick={this.closeNoFooterModal}>没关系我自己长一个</Button>
                     </p>
-                </Popup>
+                </ReactPopupLayer>
             </div>
         )
     }
@@ -88,4 +71,3 @@ ReactDOM.render(
     <Demo />,
     document.getElementById('root')
 )
-

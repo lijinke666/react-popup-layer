@@ -1,48 +1,75 @@
-const webpack = require('webpack')
 const path = require('path')
-const HtmlWebpackPlugin = require("html-webpack-plugin") 
+const OpenBrowserPlugin = require('open-browser-webpack-plugin')
+
+const HOST = "localhost"
+const PORT = 3000
 
 module.exports = {
     entry: path.join(__dirname, '../example/example.js'),
-
     output: {
-        path: path.join(__dirname, '../example/build'),
-        filename: 'bundle.js',
-        publicPath:"./"
+        path: path.join(__dirname, "../example/dist"),
+        filename: "build.js"
     },
-
+    //模块加载器
     module: {
         rules: [
-            { 
-                test: /\.js$/,
-                use: 'babel-loader'
-             },
-            { 
+            {
+                test: /\.js[x]?$/,
+                use: [{
+                    loader: "babel-loader"
+                }],
+                exclude: "/node_modules/",
+            },
+            {
                 test: /\.less$/,
                 use: [
-                        { loader: "style-loader" },     
-                        { loader: "css-loader", options: { minimize: false, sourceMap: true } },  
-                        { loader: "less-loader", options: { sourceMap: true } }
-                    ]
-             }
+                    { loader: "style-loader" },
+                    { loader: "css-loader", options: { minimize: false, sourceMap: true } },
+                    { loader: "less-loader", options: { sourceMap: true } }
+                ]
+            },
+            {
+                test: /\.(eot|ttf|svg|woff|woff2)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "fonts/[name][hash:8].[ext]",
+                        },
+                    },
+                ],
+            },
+        ]
+    },
+    devtool: "source-map",
+    //自动补全后缀
+    resolve: {
+        enforceExtension: false,
+        extensions: ['.js', '.jsx', '.json'],
+        modules: [
+            path.resolve("src"),
+            path.resolve("."),
+            "node_modules",
         ],
     },
-
-    devtool: 'source-map',
-
     devServer: {
-        contentBase: path.join(__dirname, '../example/'),
-        publicPath: '/build/',
+        contentBase: path.join(__dirname, "../example/"),
+        compress: true,
+        inline: true,
+        port: PORT,
+        publicPath: "/dist/",
         historyApiFallback: true,
+        stats: {
+            color: true,
+            errors: true,
+            version: true,
+            warnings: true,
+            progress: true
+        }
     },
-    plugins:[
-        new webpack.NamedModulesPlugin(),         
-        new webpack.NoEmitOnErrorsPlugin(),          
-        new HtmlWebpackPlugin({
-            title: "example",
-            filename: "index.html",           
-            template: path.join(__dirname, "../example/example.html"),  
-            hash: true,       
+    plugins: [
+        new OpenBrowserPlugin({
+            url:`http:${HOST}:${PORT}/`
         })
     ]
 }
