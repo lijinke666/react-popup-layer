@@ -47,7 +47,7 @@
     "react-component-example": "^0.0.0",
     "react-loader": "^2.4.0",
     "react-music-player": "^1.0.3",
-    "react-popup-layer": "^0.0.7",
+    "react-popup-layer": "^0.2.1",
     "style-loader": "~0.13.0",
     "url-loader": "^0.5.8",
     "webpack": "2.2.1",

@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import ReactPopupLayer from "../src/index"
+import ReactPopupLayer from "react-popup-layer"
 import Button from "rc-button"
 import Message from "rc-message"
 
