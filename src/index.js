@@ -1,9 +1,8 @@
-import React, { PropTypes } from "react"
-import ReactDOM from "react-dom"
+import React, { PureComponent } from "react"
+import PropTypes from "prop-types"
 import classNames from "classnames"
-import Button from "rc-button"
+
 import CloseIcon from "react-icons/lib/fa/close"
-import "./styles.less"
 
 export default class Madal extends React.PureComponent {
     static defaultProps = {
@@ -73,8 +72,8 @@ export default class Madal extends React.PureComponent {
 
                             : footer instanceof Array
                                 ? <div key="modal-footer" className="modal-footer">
-                                    <Button onClick={() => onCancel()}>{cancelText}</Button>
-                                    <Button type="primary" onClick={() => onOk()}>{okText}</Button>
+                                    <button className="btn-default" onClick={() => onCancel()}>{cancelText}</button>
+                                    <button className="btn-primary" onClick={() => onOk()}>{okText}</button>
                                 </div>
                                 : undefined
                     }

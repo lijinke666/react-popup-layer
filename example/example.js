@@ -1,9 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import ReactPopupLayer from "react-popup-layer"
-import Button from "rc-button"
+import ReactPopupLayer from "../src"
 import Message from "rc-message"
+import "rc-message/assets/index.css"
 
+import "../src/index.less"
 const margin = {margin:"10px 0"}
 
 
@@ -47,9 +48,9 @@ class Demo extends React.PureComponent {
                 <hr/>
 
                 <ol>
-                    <li style={margin}><Button type="primary" onClick={this.openModal}>open Modal</Button></li>
-                    <li style={margin}><Button type="success" onClick={this.openNoFooterModal}>open no footer Modal</Button></li>
-                    <li style={margin}><Button type="orange" onClick={this.openCustomFooterModal}>open custom footer Modal</Button></li>
+                    <li style={margin}><button className="btn btn-primary"  onClick={this.openModal}>open Modal</button></li>
+                    <li style={margin}><button className="btn btn-success" onClick={this.openNoFooterModal}>open no footer Modal</button></li>
+                    <li style={margin}><button className="btn btn-info" onClick={this.openCustomFooterModal}>open custom footer Modal</button></li>
                 </ol>
          
                 <hr />
@@ -76,7 +77,7 @@ class Demo extends React.PureComponent {
                 >
                     <p>
                         <h1>bla bla bla ...</h1>
-                        <Button type="primary block" onClick={this.cancelNoFooterModal}>:(</Button>
+                        <button className="btn btn-primary btn-block" onClick={this.cancelNoFooterModal}>:(</button>
                     </p>
                 </ReactPopupLayer>
 
@@ -85,8 +86,8 @@ class Demo extends React.PureComponent {
                     visible={visible3}
                     onCancel={this.cancelCustomFooterModal}
                     footer={[
-                        <Button key="cancel" onClick={this.cancelCustomFooterModal}>cancel</Button>,
-                        <Button key="ok" type="primary" onClick={this.customOk}>ok</Button>
+                        <button className="btn btn-default" key="cancel" onClick={this.cancelCustomFooterModal}>cancel</button>,
+                        <button key="ok" className="btn btn-primary" onClick={this.customOk}>ok</button>
                     ]}
                     className="my-modal"
                 >
