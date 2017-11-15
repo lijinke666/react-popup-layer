@@ -1,5 +1,5 @@
-# React-Jk-Music-Player
-### a example
+# react-popup-layer
+a example
 
 ```
 $ npm run demo :)
