@@ -57,7 +57,7 @@ class Demo extends React.PureComponent {
         this.setState({ visible3: false })
     }
     customOk = ()=>{
-        console.log('ok!)
+        console.log('ok!')
         this.cancelCustomFooterModal()
     }
     render() {
