@@ -72,8 +72,8 @@ export default class Madal extends React.PureComponent {
 
                             : footer instanceof Array
                                 ? <div key="modal-footer" className="modal-footer">
-                                    <button className="btn-default" onClick={() => onCancel()}>{cancelText}</button>
-                                    <button className="btn-primary" onClick={() => onOk()}>{okText}</button>
+                                    <button className="btn btn-default" onClick={() => onCancel()}>{cancelText}</button>
+                                    <button className="btn btn-primary" onClick={() => onOk()}>{okText}</button>
                                 </div>
                                 : undefined
                     }

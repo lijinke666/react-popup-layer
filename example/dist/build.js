@@ -2335,14 +2335,14 @@ var Madal = function (_React$PureComponent) {
                         { key: "modal-footer", className: "modal-footer" },
                         _react2.default.createElement(
                             "button",
-                            { className: "btn-default", onClick: function onClick() {
+                            { className: "btn btn-default", onClick: function onClick() {
                                     return onCancel();
                                 } },
                             cancelText
                         ),
                         _react2.default.createElement(
                             "button",
-                            { className: "btn-primary", onClick: function onClick() {
+                            { className: "btn btn-primary", onClick: function onClick() {
                                     return onOk();
                                 } },
                             okText
