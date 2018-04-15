@@ -30,7 +30,7 @@ const margin = {margin:"10px 0"}
 
 class Demo extends React.PureComponent {
     state = {
-        visible: false,Message
+        visible: false,
         visible2: false,
         visible3:false,
     }
